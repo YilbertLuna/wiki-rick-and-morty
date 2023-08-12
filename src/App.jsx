@@ -1,8 +1,10 @@
+import { Routs } from "./routers/Routs"
+
 function App() {
 
   return (
     <div>
-      <h1>Hello World</h1>
+      <Routs/>
     </div>
   )
 }
