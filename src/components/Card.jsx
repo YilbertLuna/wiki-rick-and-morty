@@ -6,7 +6,7 @@ function Card(data) {
         <div className="flex flex-col items-center p-3 mt-4">
             <Link to={`/character/${data.data.id}`}>
                 <figure className="w-56 h-56 cursor-pointer">
-                    <img className="w-full rounded-full justify-center border-2 border-black" src={data.data.image}/>
+                    <img className="w-full rounded-full justify-center" src={data.data.image}/>
                 </figure>
             </Link>
             <div className="mt-2">
