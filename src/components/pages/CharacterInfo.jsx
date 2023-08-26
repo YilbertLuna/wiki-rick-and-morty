@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { UseGetCharacterInfo } from "../../hooks/UseGetCharacterInfo"
+import { useContext } from "react"
+import { appContext } from "../../context/AppContext"
 
 function CharacterInfo() {
 
     const { CharacterId } = useParams()
 
     const { characterInfo } = UseGetCharacterInfo(CharacterId)
+
+    const context = useContext(appContext)
 
     // function for character status styles
     function status () {
@@ -16,9 +20,12 @@ function CharacterInfo() {
     }
 
     return (
-        <div className="grid justify-items-center mt-28">
+
+        // I have to put the same size of margin top twice so that in this way there is no problem with the responsive because 
+        // if I do not put "sm:mt-28 there will be a problem with the card in the responsive"
+        <div className={`${context.menuBurger === false ? 'mt-8' : null} grid justify-items-center mt-28 sm:mt-28`}>
             <div className="flex flex-col rounded-md">
-                <figure className="w-80 h-60">
+                <figure className="w-72 h-52 sm:w-80 sm:h-60">
                     <img className="w-full h-full rounded-lg" src={characterInfo.image} alt="" />
                 </figure>
                 <div>
