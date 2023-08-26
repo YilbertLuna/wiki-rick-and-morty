@@ -5,6 +5,8 @@ import { useState } from "react";
 const appContext = createContext()
 
 function Context ({ children }) {
+
+    // next and back page
     const [page, setPage] = useState(1)
 
     function nextPage() {
@@ -15,11 +17,28 @@ function Context ({ children }) {
         if(page > 1) setPage(page - 1)
     }
 
+    // menu and menu burger responsive
+    const [menuBurger, setMenuBurger] = useState(true)
+    const [menu, setMenu] = useState(false)
+
+    function handleMenu() {
+        if(menu === false) setMenu(true)
+        else setMenu(false)
+
+        if(menuBurger === true) setMenuBurger(false)
+        else setMenuBurger(true)
+    }
+
     return(
         <appContext.Provider value={{
             page,
             nextPage,
-            backPage
+            backPage,
+            menuBurger,
+            menu,
+            setMenu,
+            handleMenu,
+            setMenuBurger
         }}>
             {children}
         </appContext.Provider>

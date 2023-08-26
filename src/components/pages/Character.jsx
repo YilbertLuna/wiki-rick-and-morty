@@ -13,7 +13,7 @@ function Character() {
 
     return(
         <div>
-            <h1 className="grid mt-32 mb-6 justify-items-center text-center text-2xl font-bold">Characters</h1>
+            <h1 className={`${context.menu === true ? 'mt-6' : 'mt-32'} ${context.menuBurger === false ? 'sm:mt-32' : null} grid mb-6 justify-items-center text-center text-2xl font-bold`}>Characters</h1>
 
             <div className="flex justify-between items-center w-full px-20 font-medium text-lg">
                 <button className={`${context.page === 1 ? 'opacity-0 cursor-default' : ''} border rounded-lg bg-green-400 w-20 p-3 flex justify-between items-center`} onClick={() => context.backPage()}><GrFormPreviousLink/> Back</button>
