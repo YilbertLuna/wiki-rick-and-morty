@@ -10,7 +10,7 @@ function ResponsiveMenu() {
 
     return (
         // menu burguer responsive
-        <ul className={`${context.menu === true ? null : 'hidden'} ${context.menuBurger != false ? null : 'sm:hidden'} flex gap-10 mt-24 p-2 items-center text-center bg-white border-b-2 border-gray-400 responsive-menu`}>
+        <ul className={`${context.menu === true ? null : 'hidden'} ${context.menuBurger !== true ? null : 'sm:hidden'} flex gap-3 mt-24 p-2 items-center text-center bg-white border-b-2 border-gray-400 responsive-menu`}>
             <li className="text-xl font-semibold py-1  w-full justify-center">
                 <NavLink to="/" className={({isActive}) => isActive ? activeStyle : undefined}>Character</NavLink> 
             </li>
