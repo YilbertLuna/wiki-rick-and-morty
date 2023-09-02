@@ -2,13 +2,26 @@ const API_URL = "https://rickandmortyapi.com/api"
 
 // used function for get all data of the characters from API
 // getData receives as a parameter the page number that we give it from the character component
-export async function getDataCharacters(page) {
+export async function getDataCharacters(page, name) {
     try{
-        const res = await fetch(`${API_URL}/character/?page=${page}`)
+        // the parameter "name" is for search characters 
+        const res = await fetch(`${API_URL}/character/?page=${page}&name=${name}`)
         const data = await res.json()
         // from data we return the results
         return data.results
     }catch (error) {
+        console.error(error)
+    }
+}
+
+// this function is for get pages for characters searched and turn the page, for this return data.info?.pages
+export async function getSearchCharacterPage(name){
+    try {
+        const res = await fetch(`${API_URL}/character/?&name=${name}`)
+        const data = await res.json()
+        // return data.info for get total pages
+        return data.info
+    } catch (error) {
         console.error(error)
     }
 }
