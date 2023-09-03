@@ -29,9 +29,9 @@ function CharacterInfo() {
                     <img className="w-full h-full rounded-lg" src={characterInfo.image} alt="" />
                 </figure>
                 <div>
-                    <p className="flex flex-col">
+                    <p className="flex flex-col w-72 sm:w-80">
                         <span className={`${status()} w-ful text-lg grid justify-items-center rounded-lg mt-3 mb-3`}>{characterInfo.status}</span>
-                        <span className="grid justify-items-center text-2xl mb-2"><strong>{characterInfo.name}</strong></span>
+                        <span className="grid justify-items-center text-center text-2xl mb-2"><strong>{characterInfo.name}</strong></span>
                         <span className="font-medium">Gender: {characterInfo.gender}</span>
                         <span className="font-medium">Species: {characterInfo.species}</span>
                         <span className="font-medium">Origin: {characterInfo.origin?.name}</span>

@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom"
 
 function Card(data) {
+
     return(
         <div className="flex flex-col items-center p-3 mt-4">
             <Link to={`/character/${data.data.id}`}>
@@ -10,7 +11,7 @@ function Card(data) {
                 </figure>
             </Link>
             <div className="mt-2">
-                <p className="grid justify-center text-start text-lg">
+                <p className="grid justify-center text-center w-60 text-lg">
                     <strong>{data.data.name}</strong>
                 </p>
             </div>
