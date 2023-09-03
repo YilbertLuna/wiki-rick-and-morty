@@ -23,7 +23,7 @@ function CharacterInfo() {
 
         // I have to put the same size of margin top twice so that in this way there is no problem with the responsive because 
         // if I do not put "sm:mt-28 there will be a problem with the card in the responsive"
-        <div className={`${context.menuBurger === false ? 'mt-8' : null} grid justify-items-center mt-28 sm:mt-28`}>
+        <div className={`${context.menuBurger === false ? 'mt-8' : null} grid justify-items-center mt-28 sm:mt-28 mb-20`}>
             <div className="flex flex-col rounded-md">
                 <figure className="w-72 h-52 sm:w-80 sm:h-60">
                     <img className="w-full h-full rounded-lg" src={characterInfo.image} alt="" />
