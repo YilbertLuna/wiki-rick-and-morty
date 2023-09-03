@@ -7,6 +7,14 @@ function Character() {
     
     const context = useContext(appContext)
     
+    // this function is for, if the condicional for searched character is null this function return a message "no character found"
+    function viewCharacter() {
+        if(context.character) return (
+            <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                    {context.character?.map(data => <Card key={data.id} data={data}/>)}
+            </div>)
+        else return (<h1 className="grid justify-center mt-11 text-center text-2xl">No character found</h1>)
+    }
     
     return(
         <div>
@@ -22,10 +30,8 @@ function Character() {
                 <h1 className="text-xl text-center justify-center">Page {context.page}</h1>
                 <button className={`${context.page === context.pages?.pages ? 'opacity-0 cursor-default' : ''} border rounded-lg bg-green-400 w-20 p-3 flex justify-between items-center`} onClick={() => context.nextPage()}>next <GrFormNextLink/></button>
             </div>
-
-            <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5*/">
-                {context.character?.map(data => <Card key={data.id} data={data}/>)}
-            </div>
+            
+            { viewCharacter()}
         </div>
     )
 }

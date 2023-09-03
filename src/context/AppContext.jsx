@@ -29,7 +29,8 @@ function Context ({ children }) {
         setSearch(e.target.value)
     }
     // filter character
-    character.filter((item => item.name.toLowerCase().includes(searcher.toLowerCase())))
+    // when searched for a character that does not exit, the conditional has to return null 
+    character ? character.filter((item => item.name.toLowerCase().includes(searcher.toLowerCase()))) : null
     //----------------------------------------------------------------------------------------//
     
     // functions to change page
