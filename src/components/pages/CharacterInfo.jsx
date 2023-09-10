@@ -40,7 +40,7 @@ function CharacterInfo() {
                 </div>
                 <div className="grid justify-items-center border border-blue-700 bg-blue-700 rounded-lg mt-4">
                     <Link to='/'>
-                        <button className="p-1">Bakc</button>
+                        <button className="p-1">Back</button>
                     </Link>
                 </div>
             </div>
