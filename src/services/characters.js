@@ -37,14 +37,30 @@ export async function getDataCharacterDetail(characterId) {
     }
 }
 
-// used function for get all data of the location from API
-export async function getDataCharactersLocation() {
+// used function for get data location from API
+export async function getDataLocaiton(page) {
     try {
-        const res = await fetch(`${API_URL}/location/`)
+        const res = await fetch(`${API_URL}/location/${page}`)
         const data = await res.json()
-        // from  we return the results
-        console.log(data.results)
-        return data.results
+        return data
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+// used function for get all character data of location from API
+export async function getDataResidentsLocation(page) {
+    try {
+        const res = await fetch(`${API_URL}/location/${page}`).then((res) => res.json())
+        let residents = Promise.all(
+            res.residents.map(
+                async (data) => {
+                    const res = await fetch(data)
+                    return await res.json()
+                }
+            )
+        )
+        return residents
     } catch (error) {
         console.error(error)
     }
