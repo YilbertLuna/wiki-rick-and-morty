@@ -66,16 +66,31 @@ export async function getDataResidentsLocation(page) {
     }
 }
 
-// used funciton for get all data of the episode from API
-export async function getDataCharactersEpisode(){
+// function for get data info of episode from API
+export async function getDataEpisode(page) {
     try {
-        const res = await fetch(`${API_URL}/episode`)
+        const res = await fetch(`${API_URL}/episode/${page}`)
         const data = await res.json()
-        // from we return the results
-        return data.retulrs
+        return data
     } catch (error) {
         console.error(error)
     }
 }
 
-
+// used funciton for get all characters data of episode from API
+export async function getDataCharactersEpisode(page){
+    try {
+        const res = await fetch(`${API_URL}/episode/${page}`).then((res) => res.json())
+        const characters = Promise.all(
+            res.characters.map(
+                async (data) => {
+                    const res = await fetch(data)
+                    return await res.json()
+                }
+            )
+        )
+        return characters
+    } catch (error) {
+        console.error(error)
+    }
+}
