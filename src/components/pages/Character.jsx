@@ -28,7 +28,7 @@ function Character() {
             <div className="flex justify-between items-center w-full px-8 sm:px-20 font-medium text-lg">
                 <button className={`${context.page === 1 ? 'opacity-0 cursor-default' : ''} border rounded-lg bg-green-400 w-20 p-3 flex justify-between items-center`} onClick={() => context.backPage()}><GrFormPreviousLink/> Back</button>
                 <h1 className="text-xl text-center justify-center">Page {context.page}</h1>
-                <button className={`${context.page === context.pages?.pages ? 'opacity-0 cursor-default' : ''} border rounded-lg bg-green-400 w-20 p-3 flex justify-between items-center`} onClick={() => context.nextPage()}>next <GrFormNextLink/></button>
+                <button className={`${context.page === context.pages?.pages ? 'opacity-0 cursor-default' : ''} border rounded-lg bg-green-400 w-20 p-3 flex justify-between items-center`} onClick={() => context.nextPage()}>Next <GrFormNextLink/></button>
             </div>
             
             { viewCharacter()}
