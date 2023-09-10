@@ -31,7 +31,7 @@ function Location() {
            <InputGroup name='Location' changeId={setPage} total={126}/>
 
             <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {characterLocationInfo.map(data => <Card key={data.id} data={data} page='/location/'/>)}
+                {characterLocationInfo.map(data => <Card key={data.id} data={data}/>)}
             </div>
         </div>
     )
