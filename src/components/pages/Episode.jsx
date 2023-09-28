@@ -17,7 +17,7 @@ function Episode() {
 
     return(
         <div>
-           <h1 className={`${context.menu === true ? 'mt-6' : 'mt-32'} ${context.menuBurger === false ? 'sm:mt-32' : null}  mb-6 justify-items-center text-center text-2xl font-bold`}>Episode Name <strong className="text-blue-600">{info.name}</strong> </h1>
+           <h1 className={`${context.active ? 'mt-52' : 'mt-32'} grid md:mt-28 justify-items-center text-center text-2xl font-bold`}>Episode Name <strong className="text-blue-600">{info.name}</strong> </h1>
         
            <div className="grid justify-items-center text-center text-2xl">
                  <p className="flex flex-col">
