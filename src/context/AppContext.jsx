@@ -11,9 +11,8 @@ function Context ({ children }) {
     const [page, setPage] = useState(1)
     // state for search character
     const [searcher, setSearch] = useState("")
-    // state for the menu and menu burger responsive
-    const [menuBurger, setMenuBurger] = useState(true)
-    const [menu, setMenu] = useState(false)
+    // state for the menu responsive
+    const [active, setActive] = useState(false)
     //----------------------------------------------------------------------------------------//
 
     //using custom hooks for get cahracter and info from API
@@ -44,12 +43,8 @@ function Context ({ children }) {
     //----------------------------------------------------------------------------------------//
 
     // function to menu responsive
-    function handleMenu() {
-        if(menu === false) setMenu(true)
-        else setMenu(false)
-
-        if(menuBurger === true) setMenuBurger(false)
-        else setMenuBurger(true)
+    function handdleNavBarActive() {
+        !active ? setActive(true) : setActive(false)
     }
 
     return(
@@ -58,11 +53,8 @@ function Context ({ children }) {
             setPage,
             nextPage,
             backPage,
-            menuBurger,
-            menu,
-            setMenu,
-            handleMenu,
-            setMenuBurger,
+            handdleNavBarActive,
+            active,
             character,
             searchCharacter,
             pages,
